@@ -1,0 +1,6 @@
+[book]
+authors = ["Idris Raja"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Nixos Mental Model"
