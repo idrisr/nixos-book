@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>How To Think About Nix - Nixos Mental Model</title>
+        <title>The Stages of Nix - Nixos Mental Model</title>
 
 
         <!-- Custom HTML head -->
@@ -166,19 +166,35 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="how-to-think-about-nix"><a class="header" href="#how-to-think-about-nix">How to Think about Nix</a></h1>
+                        <h1 id="the-stages-of-nix"><a class="header" href="#the-stages-of-nix">The Stages of Nix</a></h1>
+<p>When working with Nix, I find it helpful to think in terms of stages, similar to
+how we talk about "compile-time" and "run-time" in other programming contexts.
+For Nix, I break things down into four specialized stages:</p>
+<h2 id="stage-1---nix"><a class="header" href="#stage-1---nix">Stage 1---Nix</a></h2>
+<p>This is the world of Nix code itself. Nix is a functional, pure programming
+language, and this stage is where everything begins. All relevant
+inputs---source code, file paths, shell scripts, makefiles, Maven XML,
+environment variables, configuration files, etc; are modeled as Nix expressions.</p>
+<p>The key feature here is purity, which is another way of saying there are no side
+effects. Evaluating a Nix expression has no side effects:
+no writing to disk, no network calls, no user input. This is what makes Nix
+evaluation deterministic. Aside from CPU usage, RAM allocation, or battery
+drain, the evaluation is side-effect free—just like in Haskell.</p>
+<p>Why is that useful? Because it lets you reason about Nix code like math. You can
+evaluate large expressions with the guarantee they won’t suddenly write to disk
+or download random tarballs mid-computation.</p>
+<h2 id="stage-2---bash"><a class="header" href="#stage-2---bash">Stage 2---bash</a></h2>
+<h2 id="stage-3---store"><a class="header" href="#stage-3---store">Stage 3---store</a></h2>
+<h2 id="stage-4---symlink"><a class="header" href="#stage-4---symlink">Stage 4---(sym)link</a></h2>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="chapter_0.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="chapter_1.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="chapter_2.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
-                            </a>
 
                         <div style="clear: both"></div>
                     </nav>
@@ -186,13 +202,10 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="chapter_0.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="chapter_1.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="chapter_2.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
             </nav>
 
         </div>
